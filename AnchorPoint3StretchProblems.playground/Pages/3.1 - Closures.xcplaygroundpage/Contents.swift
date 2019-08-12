@@ -17,5 +17,37 @@ var numbersArray = [11,24,45,44,59,43,88,93,58,11,13,14,15,190]
 var stringsArray = ["I", "Love", "DevMountain"]
 var blackDiamondDictionary = ["Mama" : "too cold", "Papa" : "too hot", "Baby" : "just right"]
 
+//PROBLEM 1
 
-//: [Next](@next)
+let multiplesOfThree = numbersArray.filter { (number) ->Bool  in
+    return number % 3 == 0
+}
+
+/*
+var multiplesArray: [Int] = []
+
+
+for i in numbersArray {
+
+    if i % 3 == 0 {
+        multiplesArray.append(i)
+    }
+}
+
+print(multiplesArray)
+*/
+ 
+//PROBLEM 2
+
+func maxNum(numArray: [Int]) -> Int {
+    return numArray.reduce(0) { (results, next) -> Int in
+        return results > next ? results : next
+    }
+}
+
+print(maxNum(numArray: numbersArray))
+
+//PROBLEM 3
+
+var jointArrays : String = stringsArray.reduce("",{ $0 == "" ? $1 : $0 + " " + $1 })
+print(jointArrays)
